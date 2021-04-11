@@ -1,0 +1,15 @@
+# top-most EditorConfig file #
+root = true
+
+# Global file settings #
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+# Ensure that files follow the correct Java-style curly bracket placement #
+[*.{java,kt,kts,gradle,groovy,js,json}]
+curly_bracket_next_line	= false

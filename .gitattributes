@@ -1,0 +1,13 @@
+# Auto detect text files and force LF endings.
+* texwqt=auto
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.dat binary
+*.dat2 binary
+*.idx* binary
+*.jar binary
+*.dll
+*.so
+*.dylib
+*.gz

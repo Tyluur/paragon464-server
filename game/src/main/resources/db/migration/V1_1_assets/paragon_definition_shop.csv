@@ -1,0 +1,25 @@
+id,name,currency,general_store,buys_back
+0,General Supplies,COINS,t,t
+1,Weaponry & Armoury Supplies,COINS,f,f
+2,Magic Supplies,COINS,f,f
+3,Lowe's Armour & Weaponry,COINS,f,f
+4,Richard's Teamcapes,COINS,f,f
+5,Richard's Teamcapes,COINS,f,f
+6,Thessalia's Cosmetics,COINS,f,f
+7,Crafting Supplies,COINS,f,f
+8,TzHaar-Hur-Tel's Equipment Supplies,TZHAAR,f,t
+9,Master fisherman supplies,COINS,f,f
+10,Richard's Teamcapes,COINS,f,f
+11,Richard's Teamcapes,COINS,f,f
+12,Vannaka Slayer Supplies,COINS,f,f
+13,Pest Control Rewards,PEST_CONTROL,f,f
+14,Runecrafting Rewards,RUNE_CRAFT,f,f
+15,Herblore Supplies,COINS,f,f
+16,Gnome Robe Supplies,COINS,f,f
+17,Mage Arena Staves,COINS,f,f
+18,Vote Exchange,VOTE_POINTS,f,f
+19,Culinaromancer's Chest,COINS,f,f
+20,RuneNova's Credit Exchange,CREDITS,f,f
+21,Nightmare Zone Exchange,NIGHTMARE_POINTS,f,f
+22,Master Woodsman Exchange,WC_GUILD_POINTS,f,f
+23,Prospector Percy's Exchange,MINE_GUILD_POINTS,f,f

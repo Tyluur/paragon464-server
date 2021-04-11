@@ -1,0 +1,53 @@
+group = groupName
+version = projectVersion
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+subprojects { Project subProject ->
+    apply plugin: 'java'
+
+    sourceCompatibility = jdkVersion
+    targetCompatibility = jdkVersion
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    tasks.withType(JavaCompile) {
+        options.incremental = true
+    }
+
+    dependencies {
+        compile group: 'com.google.guava', name: 'guava', version: guavaVersion
+        compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4jVersion
+        compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: log4jVersion
+        testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitVersion
+        testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junitVersion
+        testCompile group: 'junit', name: 'junit', version: junit4Version
+        testRuntime group: 'org.junit.vintage', name: 'junit-vintage-engine', version: junitVintageVersion
+        testRuntime group: 'org.junit.platform', name: 'junit-platform-launcher', version: junitPluginVersion
+    }
+
+    task copyArtifacts {
+        dependsOn project.tasks.withType(Jar)
+        doLast {
+            def DIST_DIR = "${rootDir}/dist"
+            def SRC_DIR = "${buildDir}/libs"
+
+            ant.mkdir(dir: DIST_DIR)
+            ant.copy(todir: DIST_DIR) {
+                fileset(dir: SRC_DIR,
+                    includes: "*.jar,*.zip")
+            }
+        }
+    }
+}

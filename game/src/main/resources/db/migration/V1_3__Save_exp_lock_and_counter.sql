@@ -1,0 +1,3 @@
+ALTER TABLE paragon_player
+ADD COLUMN exp_counter INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN exp_locked BOOLEAN NOT NULL DEFAULT false;

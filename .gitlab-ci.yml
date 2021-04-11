@@ -1,0 +1,31 @@
+image: openjdk:11-jdk
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+  - mkdir -p $GRADLE_USER_HOME
+  - chmod +x ./gradlew
+
+cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+        - .gradle/wrapper
+        - .gradle/caches
+        - .gradle/build-cache
+
+stages:
+  - build
+  - test
+
+compileJava:
+  stage: build
+  script:
+    - ./gradlew copyArtifacts
+  artifacts:
+    untracked: false
+    paths:
+      - dist/*.jar
+
+test:
+  stage: test
+  script:
+    - ./gradlew test

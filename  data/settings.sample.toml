@@ -1,0 +1,96 @@
+[general]
+server_name = "RuneNova"
+
+[development]
+debug_mode = true
+
+[areas]
+initial_spawn = [2329, 3689, 0]
+respawn = [2329, 3677, 0]
+
+[forum]
+board-url = "www.paragon464.com"
+scheme = "https"
+api-key = ""
+
+[database]
+port = 5432
+type = "POSTGRES"
+address = "localhost"
+database = "paragon"
+username = "postgres"
+password = ""
+
+[network]
+bind_address = "0.0.0.0"
+game_port = 43594
+webserver_port = 4568
+connection_limit = 3
+
+# # # # # # # # # # # # # # # # # # # # # # # # #
+# DANGEROUS OPTIONS BELOW - NOVICE USERS BEWARE #
+# # # # # # # # # # # # # # # # # # # # # # # # #
+
+[engine]
+cycle_rate = 600
+player_limit = 2000
+npc_limit = 2048
+username_length_limit = 12
+password_length_limit = 20
+free_memory_minimum = 30000000
+
+[network.client_version]
+major_version = 464
+minor_version = 0
+
+[[network.packet_handler]]
+opcodes = [202, 128, 7]
+packet_handler = "com.paragon464.gameserver.net.packet.QuietPacketHandler"
+
+[[network.packet_handler]]
+opcodes = [165]
+packet_handler = "com.paragon464.gameserver.net.packet.CommandHandler"
+
+[[network.packet_handler]]
+opcodes = [115, 11, 197, 133, 102, 214, 238, 47, 219, 188, 162]
+packet_handler = "com.paragon464.gameserver.net.packet.Communication"
+
+[[network.packet_handler]]
+opcodes = [230]
+packet_handler = "com.paragon464.gameserver.net.packet.IdlePacketHandler"
+
+[[network.packet_handler]]
+opcodes = [153, 113, 240, 71, 37, 134, 137, 140, 205, 210, 148, 104, 9, 28]
+packet_handler = "com.paragon464.gameserver.net.packet.ActionButtonHandler"
+
+[[network.packet_handler]]
+opcodes = [50, 143, 36]
+packet_handler = "com.paragon464.gameserver.net.packet.Walk"
+
+[[network.packet_handler]]
+opcodes = [215, 121, 101, 103, 166, 212, 247, 216, 28, 163, 255, 79, 92, 73]
+packet_handler = "com.paragon464.gameserver.net.packet.ItemInteract"
+
+[[network.packet_handler]]
+opcodes = [177, 88, 159, 86, 220, 78, 244, 65]
+packet_handler = "com.paragon464.gameserver.net.packet.InterfaceOptions"
+
+[[network.packet_handler]]
+opcodes = [129, 156, 19, 51, 218, 69, 187, 72]
+packet_handler = "com.paragon464.gameserver.net.packet.NPCInteract"
+
+[[network.packet_handler]]
+opcodes = [49]
+packet_handler = "com.paragon464.gameserver.net.packet.AppearanceHandler"
+
+[[network.packet_handler]]
+opcodes = [119, 44, 120]
+packet_handler = "com.paragon464.gameserver.net.packet.ObjectInteract"
+
+[[network.packet_handler]]
+opcodes = [183, 180, 84, 123]
+packet_handler = "com.paragon464.gameserver.net.packet.PlayerInteract"
+
+[[network.packet_handler]]
+opcodes = [99, 243]
+packet_handler = "com.paragon464.gameserver.net.packet.ClientAction"
